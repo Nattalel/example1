@@ -1,0 +1,26 @@
+       try {
+            //Создание объекта класса, в котором лежит считанный файл
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String word = "", temp = "";
+
+            //идем циклом по строкам файла
+
+            int c,matches = 0;
+            while ((c = reader.read()) != -1 ) {
+                if ((char)c != ' ' && (char)c != '.' && (char)c != ',') {
+                    char letter[] = {(char) c};
+                    String str = new String(letter);
+                    temp = temp + str;
+                }
+                else {
+                    if (temp.contains("тестировани")){
+                        System.out.println("Victory:"+temp);
+                        matches++;
+                    }
+                    temp = "";
+                }
+                //word = word + temp;
+            }
+            System.out.println("Count:"+matches);
+
+        }
