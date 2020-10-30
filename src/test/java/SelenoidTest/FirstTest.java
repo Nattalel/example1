@@ -21,15 +21,15 @@ public class FirstTest extends  Basic {
     public void btest() {
 
         //Тестирование поиска в Гугл
-        /*getDriver().get("https://www.google.ru/");
+        getDriver().get("https://www.google.ru/");
         getDriver().manage().window().maximize();
         Unit in = new Unit(getDriver());
 
         in.setSearchText("Привет");
-        in.clickSubmitSearch();*/
+        in.clickSubmitSearch();
 
         //Тестирование поиска в Яндекс
-        /*getDriver().get("https://yandex.ru/");
+        /*getDriver().get("https://yandex.ru/")+;
         getDriver().manage().window().maximize();
         Unit in = new Unit(getDriver());
 
@@ -62,7 +62,7 @@ public class FirstTest extends  Basic {
 
         //Тестирование поиска в эльдорадо
 
-        getDriver().get("https://www.eldorado.ru/");
+        /*getDriver().get("https://www.eldorado.ru/");
         getDriver().manage().window().maximize();
         //getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Unit in = new Unit(getDriver());

@@ -14,11 +14,11 @@ public class Unit extends Basic {
     }
 
     //Тестирование поиска в Гугл
-    /*@FindBy(xpath = ".//input[@title='Поиск']")
+    @FindBy(xpath = ".//input[@title='Поиск']")
     private WebElement setSearchText;
 
     @FindBy(xpath = "(.//input[@value='Поиск в Google'])[1]")
-    private WebElement submitSearch;*/
+    private WebElement submitSearch;
 
     //Тестирование поиска в Яндекс
     /*@FindBy(xpath = ".//input[@name='text']")
@@ -46,13 +46,14 @@ public class Unit extends Basic {
     private WebElement submitSearch;*/
 
     //Тестирование поиска в эльдорадо
-    @FindBy(xpath = ".//input[@name='search']")
+    /*@FindBy(xpath = ".//input[@name='search']")
     private WebElement setSearchText;
 
     @FindBy(xpath = ".//button[@tabindex='-1']")
     private WebElement submitSearch;
 
 
+     */
     //public void setSubmitSearch() { click(searchButton); }
 
     /**

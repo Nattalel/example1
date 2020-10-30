@@ -28,7 +28,7 @@ public class Basic {
      * @param element
      * @return
      */
-    protected Boolean waitVisibilityOfElement(final WebElement element) {
+    public Boolean waitVisibilityOfElement(final WebElement element) {
         //   switchToFrame();
         //будет ждать, пока элеменот появится на странице
         WebDriverWait wait = new WebDriverWait(driver, driverWaitTime);
@@ -57,6 +57,14 @@ public class Basic {
 
     }
 
+    protected void clear(final WebElement webElement) {
+
+        waitVisibilityOfElement(webElement);
+
+        webElement.clear();
+
+    }
+
     /**
      * Вводит текст в поле webElement.
      *
@@ -68,6 +76,20 @@ public class Basic {
 
         webElement.sendKeys(string);
 
+    }
+
+
+    /**
+     * Метод ждет появления элемента на странице.
+     * Затем забирает текст элемента.
+     *
+     * @param webElement
+     * @return
+     */
+    protected String getText(final WebElement webElement) {
+        waitVisibilityOfElement(webElement);
+
+        return webElement.getText();
     }
 
 }
