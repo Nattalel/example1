@@ -1,5 +1,6 @@
 package Selenium;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -91,5 +92,40 @@ public class Basic {
 
         return webElement.getText();
     }
+
+
+      /* Ждем пока элемент появится в ДОМе.
+       * Метод возвращает Boolean.
+       *
+       * @param xpath
+       * @return
+        */
+    protected Boolean waitPresentOfElement(final String xpath) {
+        //   switchToFrame();
+        WebDriverWait wait = new WebDriverWait(driver, driverWaitTime);
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+            //          switchToDefaultFrame();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * Метод ждет появления элемента по xpath.
+     * Ищет элемент через findElement.
+     * Кликает по элементу.
+     *
+     * @param xpath
+     */
+    protected void click(final String xpath) {
+        waitPresentOfElement(xpath);
+        WebElement webElement = getDriver().findElement(By.xpath(xpath));
+        waitVisibilityOfElement(webElement);
+        webElement.click();
+    }
+
 
 }

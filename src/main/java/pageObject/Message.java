@@ -1,6 +1,7 @@
 package pageObject;
 
 import Selenium.Basic;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -53,31 +54,42 @@ public class Message extends Basic {
     @FindBy(xpath = "(.//span[@class='mail-ui-Arrow'])[2]")
     private WebElement listMessage2;
 
+    @Step("Ввод почты, на которую отправляется сообщение")
     public void setSearchText(String text)  { setText(setSearchText, text);  }
+    @Step("Ввод темы сообщения")
     public void setSearchText1(String text) { setText(setSearchText1, text); }
+    @Step("Ввод текста сообщения")
     public void setSearchText2(String text) {
         setText(setSearchText2, text);
     }
 
-
+    @Step("Нажимаем кнопку отправить сообщение")
     public void clickSubmitSearch()  { click(submitSearch);  }
+    @Step("Переход в раздел входящих")
     public void clickSubmitSearch2() { click(submitSearch2); }
+    @Step("Обновление раздела входящих")
     public void clickSubmitSearch3(){
         click(submitSearch3);
     }
+    @Step("Открываем сообщение")
     public void clickSubmitSearch4() { click(submitSearch4); }
+    @Step("Открываем сообщение")
     public void clickSubmitSearch5(){
         click(submitSearch5);
     }
 
-
+    @Step("Получаем тему сообщения в разделе входящих")
     public String getScreenShot( ){ return getText(getScreenShot); }
+    @Step("Получаем тему сообщения в открытом письме")
     public String getThemeMessage( ){ return getText(getThemeMessage); }
+    @Step("Получаем текст сообщения в открытом письме")
     public String getTextMessage( ){ return getText(getTextMessage); }
 
+    @Step("Закрываем список сообщений 1")
     public void clickListMessage1(){
         click(listMessage1);
     }
+    @Step("Закрываем список сообщений 2")
     public void clickListMessage2(){
         click(listMessage2);
     }

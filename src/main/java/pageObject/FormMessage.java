@@ -14,8 +14,14 @@ public class FormMessage extends Basic {
     private WebElement listBarGroupLink;
 
 
-    public void assertTrue(Boolean waitVisibilityOfElement) { waitVisibilityOfElement(listBarGroupLink);
-//        FormMessage fm = new FormMessage(getDriver());
-//        fm.assertTrue(waitVisibilityOfElement(listBarGroupLink));
+    public void assertTrue(Boolean waitVisibilityOfElement) {
+        waitVisibilityOfElement(listBarGroupLink);
     }
+
+
+    public void meth(String text){
+        String xpath = ".//div[contains(.,'"+text+"')]";
+        assert (waitPresentOfElement(xpath));
+    }
+
 }

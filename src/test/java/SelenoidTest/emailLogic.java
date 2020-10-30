@@ -3,6 +3,8 @@ package SelenoidTest;
 import org.testng.annotations.Test;
 import pageObject.*;
 
+import java.util.ArrayList;
+
 public class emailLogic extends Basic{
     String topic;
     @Test
@@ -48,7 +50,7 @@ public class emailLogic extends Basic{
         //6. Входящие
         msg.clickSubmitSearch2();
         msg.clickSubmitSearch3();
-//
+
 //        //6. Проверяем тему
         String text = "" ;
         text = msg.getScreenShot( );
@@ -134,7 +136,7 @@ public class emailLogic extends Basic{
             System.out.println("Темы совпадают");
         }
 
-        //7. Проверяем текст сообщения
+        //12. Проверяем текст сообщения
         String text33 = "";
         text33 = msg.getTextMessage();
         String tm3 = new String(text33);
@@ -169,6 +171,14 @@ public class emailLogic extends Basic{
         //Проверка отсутствия сообщений
 
         dm.clickClearMessage();
+
+        ArrayList<String> st = new ArrayList<String>();
+        st.add(theme);
+        st.add(themeNow);
+
+        for(String a: st) {
+            dm.clickDeleteMes(a);
+        }
 
     }
 

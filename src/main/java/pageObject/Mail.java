@@ -1,6 +1,7 @@
 package pageObject;
 
 import Selenium.Basic;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,9 +22,10 @@ public class Mail extends Basic {
     @FindBy(xpath = "(.//div[@class='mail-Message-Sender']/span)[1]")
     private WebElement getSignature;
 
-
+    @Step("Кликаем на кнопку написать письмо")
     public void clickSubmitSearch(){ click(submitSearch); }
 
+    @Step("Поверка, что форма написания письма открыта")
     public void assertImagesTabIsOpen() {
         waitVisibilityOfElement(listBarGroupLink);
 
@@ -32,15 +34,7 @@ public class Mail extends Basic {
         }
     }
 
-//    public String getSignature( ){
-//        System.out.println(getText(getSignature));
-//        return getText(getSignature);
-//    }
-
-//    public void getSignature( ){
-//        System.out.println(getText(getSignature));
-//        //return getText(getSignature);
-//    }
+    @Step("Проверка подписи")
     public String getSignature( ){ return getText(getSignature); }
 
 }
